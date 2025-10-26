@@ -25,13 +25,16 @@ function getInitials(name) {
     return name.split(' ').map(word => word[0]).join('');
 }
 
-// *** Modify displayQuote ***
+// *** Add comments to displayQuote ***
 function displayQuote() {
+    // Step 1: Get a random quote object from the array
     const quote = getRandomQuote();
+    // Step 2: Set the text content of the quote paragraph
     quoteTextElement.textContent = `"${quote.text}"`; // Add quotes around the text
+    // Step 3: Set the text content of the author paragraph
     // *** Display initials along with name ***
     const initials = getInitials(quote.author);
-    quoteAuthorElement.textContent = `- ${quote.author} (${initials})`; // MODIFIED LINE
+    quoteAuthorElement.textContent = `- ${quote.author} (${initials})`;
 }
 
 // --- Event Listeners ---
